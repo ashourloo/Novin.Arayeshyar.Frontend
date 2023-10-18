@@ -1,0 +1,25 @@
+<!-- <form class="login-form"> -->
+    <mat-form-field class="login-full-width">
+      <mat-label>شماره همراه</mat-label>
+      <input type="text" matInput [formControl]="mobileFormControl" [errorStateMatcher]="matcher"
+             placeholder="مثال: 091xxxxxxx">
+      <mat-hint>شماره همراه مخصوص خود را وارد کنید</mat-hint>
+      <!-- <mat-error *ngIf="mobileFormControl.hasError('email') && !mobileFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error> -->
+      <mat-error *ngIf="mobileFormControl.hasError('required')">
+        شماره همراه حتما باید وارد شود
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="login-full-width">
+        <mat-label>کلمه عبور</mat-label>
+        <input type="password" matInput [formControl]="passwordFormControl" [errorStateMatcher]="matcher"
+               placeholder="کلمه عبور محرمانه">
+        <mat-hint>کلمه عبور محرمانه خاص خود را وارد کنید</mat-hint>
+        <mat-error *ngIf="mobileFormControl.hasError('required')">
+          کلمه عبور حتما باید وارد شود
+        </mat-error>
+      </mat-form-field>
+      <button (click)="check()"  mat-raised-button color="primary">ورود</button>
+      <button [routerLink]="'/register'" mat-raised-button >ثبت نام</button>
+  <!-- </form> -->

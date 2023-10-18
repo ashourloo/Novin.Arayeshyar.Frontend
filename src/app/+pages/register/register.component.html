@@ -1,0 +1,17 @@
+<form [formGroup]="registerForm" class="login-form">
+    <mat-form-field class="login-full-width">
+        <mat-label>شماره همراه</mat-label>
+        <input type="text" matInput formControlName="mobile" placeholder="مثال: 091xxxxxxx">
+        <mat-hint>شماره همراه مخصوص خود را وارد کنید</mat-hint>
+        <mat-error *ngIf="registerForm.controls.mobile.hasError('required')">
+            شماره همراه اجباری است
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="login-full-width">
+        <mat-label> عنوان</mat-label>
+        <input type="text" matInput formControlName="title" placeholder="مثال: 091xxxxxxx">
+        <mat-hint>شماره همراه مخصوص خود را وارد کنید</mat-hint>
+    </mat-form-field>
+    <button [disabled]="true" mat-raised-button color="primary">ورود</button>
+    <button [routerLink]="'/register'" mat-raised-button>ثبت نام</button>
+</form>
